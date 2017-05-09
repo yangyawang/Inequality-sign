@@ -7,7 +7,7 @@
 
 | 序号      |     姓名 |   redmine主页   |github主页|角色|
 | :-------- | --------:| :------: |:------: |:------: |
-| 1 |杨亚旺| http://www.hostedredmine.com/users/56842 |https://github.com/yangyawang|项目经理、开发|
+| 1 |杨亚旺| http://www.hostedredmine.com/users/56842 |https://github.com/yangyawang|项目经理、产品经理|
 | 2 | 古腾龙| http://www.hostedredmine.com/users/57050 |https://github.com/Gutenglong|UI设计、开发工程师|
 | 3 | 李泽| http://www.hostedredmine.com/users/57082 |https://github.com/Ruthless-old-Lize|开发工程师|
 | 4 | 厚博宇| http://www.hostedredmine.com/users/57436 |https://github.com/houboyu1|测试工程师|

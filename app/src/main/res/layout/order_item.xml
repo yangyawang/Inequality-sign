@@ -112,7 +112,7 @@
                         android:layout_height="match_parent"
                         android:text="再次排号"
                         android:background="@drawable/paihaojiluanniu"
-                        android:textColor="@color/red"
+                        android:textColor="@color/rosybrown"
                         android:textSize="13dp"
                         android:id="@+id/mine_orderB3"/>
                 </LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.lenovo.inequalitysign.ui.DiningActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/all"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/ct"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_theme"
+            android:text="餐厅"
+            android:layout_marginStart="19dp"
+            android:layout_alignTop="@+id/yyt"
+            android:layout_toEndOf="@+id/back1" />
+
+        <Button
+            android:id="@+id/yyt"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_theme"
+            android:text="营业厅"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="45dp" />
+        <Button
+            android:id="@+id/back1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"/>
+    </RelativeLayout>
+
+    <ListView
+            android:id="@+id/Lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </ListView>
+
+
+</LinearLayout>

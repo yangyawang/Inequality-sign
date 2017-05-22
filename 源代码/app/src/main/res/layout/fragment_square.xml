@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:id="@+id/square_ll">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/all"
+        android:textSize="25dp"
+        android:text="广场"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textStyle="bold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/sq_rank"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="排行榜\nRank"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:background="@drawable/shape"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/sq_comment"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:text="评论\ncomment"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:background="@drawable/dan"
+                    />
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/sq_scene"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:text="实景\npicture"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:background="@drawable/tao"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:background="@android:color/holo_red_light"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_marginLeft="6dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精选餐厅"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:id="@+id/LlaySquareNo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:background="@drawable/xianshang"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/TvSquareNo1"
+                    android:gravity="center"
+                    android:text="峨眉小镇"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:id="@+id/LlaySquareNo2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:background="@drawable/tao2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+                    <TextView
+                        android:padding="10dp"
+                        android:id="@+id/TvSquareNo2"
+                        android:gravity="center"
+                        android:text="额娘春饼"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:id="@+id/LlaySquareNo3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:background="@drawable/zhuo"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+                    <TextView
+                        android:padding="10dp"
+                        android:id="@+id/TvSquareNo3"
+                        android:gravity="center"
+                        android:text="胖哥俩肉蟹煲"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+1.git init初始化
+2.git remote add origin git@github.com:Traveler111/Test.git建立远程分支连接github
+3.git clone +url 可以直接将github上的下载到本地
+
+
+4.git pull origin master 用于更新本地仓库，将本地和github仓库同步
+            分支 系统默认分支名master
+  具体步骤： 命令行直接输入git pull origin master 
+5.git push origin master 用于上传github仓库
+  具体步骤： 1>git add . 选择全部文件
+             2>git commit -m "在这写你的注释，随便写"
+             3>git push origin master
+
+PS：第2步在根目录只运行一次就行，想在此根目录重新建立远程分支删掉.git文件再进行初始化（步骤1）即可，用第3步是相当于直接下载，所以想更新部分文件只需进行第4步，在进行第5步时可能会让输入用户名密码，属正常情况

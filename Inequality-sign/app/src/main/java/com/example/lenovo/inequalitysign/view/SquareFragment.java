@@ -1,19 +1,14 @@
 package com.example.lenovo.inequalitysign.view;
 
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.lenovo.inequalitysign.R;
-import com.example.lenovo.inequalitysign.ui.CommentConent;
-import com.example.lenovo.inequalitysign.ui.RankActivity;
-import com.example.lenovo.inequalitysign.ui.SceneActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,21 +22,21 @@ public class SquareFragment extends Fragment {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
-                case R.id.sq_rank:
-                    Intent i = new Intent();
-                    i.setClass(getActivity().getApplicationContext(),RankActivity.class);
-                    startActivity(i);
-                    break;
-                case R.id.sq_comment:
-                    Intent ii = new Intent();
-                    ii.setClass(getActivity().getApplicationContext(), CommentConent.class);
-                    startActivity(ii);
-                    break;
-                case R.id.sq_scene:
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity().getApplicationContext(), SceneActivity.class);
-                    startActivity(intent);
-                    break;
+//                case R.id.sq_rank:
+//                    Intent i = new Intent();
+//                    i.setClass(getActivity().getApplicationContext(),RankActivity.class);
+//                    startActivity(i);
+//                    break;
+//                case R.id.sq_comment:
+//                    Intent ii = new Intent();
+//                    ii.setClass(getActivity().getApplicationContext(), CommentConent.class);
+//                    startActivity(ii);
+//                    break;
+//                case R.id.sq_scene:
+//                    Intent intent = new Intent();
+//                    intent.setClass(getActivity().getApplicationContext(), SceneActivity.class);
+//                    startActivity(intent);
+//                    break;
             }
         }
     };
@@ -68,9 +63,9 @@ public class SquareFragment extends Fragment {
     }
 
     private void findView() {
-        rank = (Button)view.findViewById(R.id.sq_rank);//排行
-        comment = (Button)view.findViewById(R.id.sq_comment);
-        scene = (Button)view.findViewById(R.id.sq_scene);
+//        rank = (Button)view.findViewById(R.id.sq_rank);//排行
+//        comment = (Button)view.findViewById(R.id.sq_comment);
+//        scene = (Button)view.findViewById(R.id.sq_scene);
 
 
     }

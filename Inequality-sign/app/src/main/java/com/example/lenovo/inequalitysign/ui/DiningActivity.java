@@ -1,6 +1,7 @@
 package com.example.lenovo.inequalitysign.ui;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
@@ -86,9 +87,7 @@ public class DiningActivity extends Activity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.back1:
-                    Intent i = new Intent();
-                    i.setClass(DiningActivity.this,MainActivity.class);
-                    startActivity(i);
+                    finish();
                     break;
                 /*case R.id.ct:
                     //展示餐厅列表数据
@@ -103,7 +102,6 @@ public class DiningActivity extends Activity {
             }
         }
     };
-
 
 
     @Override

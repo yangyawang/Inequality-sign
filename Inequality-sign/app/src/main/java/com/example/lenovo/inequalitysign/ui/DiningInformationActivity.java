@@ -297,15 +297,7 @@ public class DiningInformationActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.back3:
-                    String start = getIntent().getStringExtra("Context");
-                    if(start.equals("HomeFragment")){
-                        Utils.flag =1;
-                        Intent intent1 = new Intent(DiningInformationActivity.this,MainActivity.class);
-                        startActivity(intent1);
-                    }else{
-                        Intent i=new Intent(DiningInformationActivity.this,DiningActivity.class);
-                        startActivity(i);
-                    }
+                    finish();
                     break;
                 case R.id.btn_qh:
                     if(state == 0){

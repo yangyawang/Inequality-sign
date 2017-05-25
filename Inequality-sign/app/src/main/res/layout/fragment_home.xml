@@ -168,6 +168,8 @@ tools:context="com.example.lenovo.inequalitysign.ui.MainActivity">
             android:layout_height="match_parent"
             android:background="@drawable/pdqh"
             android:scaleType="center"/>
+        //第一个
+
         <ImageButton
             android:id="@+id/btn_sys"
             android:layout_width="0dp"

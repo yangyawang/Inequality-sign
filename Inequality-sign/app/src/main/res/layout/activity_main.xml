@@ -40,7 +40,7 @@
                 android:layout_gravity="center"/>
 
         </LinearLayout>
-
+//第一个
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"

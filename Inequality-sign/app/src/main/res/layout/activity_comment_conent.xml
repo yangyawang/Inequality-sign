@@ -17,7 +17,7 @@
             android:textSize="25dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:text="评论"/>
+            android:text="评 论"/>
         <ImageButton
             android:id="@+id/C_back"
             android:layout_width="wrap_content"

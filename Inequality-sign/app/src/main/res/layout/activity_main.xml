@@ -12,79 +12,150 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:layout_weight="9"
+    android:layout_weight="10"
     android:id="@+id/container"></FrameLayout>
-
     <LinearLayout
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/color"
+        android:gravity="bottom">
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/liner_home"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/image_home"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:scaleType="centerCrop" />
             <TextView
-                android:id="@+id/btn_sy"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="7"
-                android:layout_gravity="center"
-                android:background="@drawable/home1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:text="首页"
-                android:layout_weight="3"
-                android:layout_gravity="center"/>
-
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
         </LinearLayout>
-//第一个
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/liner_find"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/btn_gc"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="7"
-                android:layout_gravity="center"
-                android:background="@drawable/guangchang1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:text="广场"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/btn_fj"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="7"
-                android:layout_gravity="center"
-                android:background="@drawable/dingwei1"
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/image_find"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:scaleType="centerCrop"
                 />
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_weight="3"
-                android:layout_height="0dp"
-                android:text="附近"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
-
+                android:layout_height="wrap_content"
+                android:text="广场"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/liner_mes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/image_mes"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+            <!--<TextView-->
+                <!--android:id="@+id/btn_sy"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="7"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/home1"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:text="首页"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_gravity="center"/>-->
+
+        <!--</LinearLayout>-->
+<!--//第一个-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+            <!--<TextView-->
+                <!--android:id="@+id/btn_gc"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="7"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/guangchang1"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:text="广场"-->
+                <!--android:layout_gravity="center"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+            <!--<TextView-->
+                <!--android:id="@+id/btn_fj"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="7"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/dingwei1"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:text="附近"-->
+                <!--android:textSize="15dp"-->
+                <!--android:layout_gravity="center"/>-->
+
+        <!--</LinearLayout>-->
 
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 </LinearLayout>

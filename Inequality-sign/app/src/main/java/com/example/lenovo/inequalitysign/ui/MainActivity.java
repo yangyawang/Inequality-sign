@@ -2,185 +2,176 @@ package com.example.lenovo.inequalitysign.ui;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.Notification;
 import android.content.Intent;
-import android.os.Message;
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.example.lenovo.inequalitysign.R;
-
-import com.example.lenovo.inequalitysign.Utils.Utils;
 import com.example.lenovo.inequalitysign.entity.Dining;
-import com.example.lenovo.inequalitysign.http.Httpss;
 import com.example.lenovo.inequalitysign.view.HomeFragment;
-import com.example.lenovo.inequalitysign.view.MineFragment;
 import com.example.lenovo.inequalitysign.view.NearbyFragment;
 import com.example.lenovo.inequalitysign.view.SquareFragment;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.net.URL;
 import java.util.List;
-import java.util.logging.Handler;
-
-import android.os.Bundle;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
+    public static LinearLayout ll;
 
-    private Button btn;
-    private Button btn1;
-    private Button btn2;
-    private Button btn3;
     private HomeFragment hf;
-    private MineFragment mf;
     private NearbyFragment nf;
     private SquareFragment sf;
-    private LinearLayout ll;
+
+    private BHFragment bh;
     private List<Dining> ls;
-    private SlidingMenu mMenu;
+
+    private LinearLayout liner_home;
+    private LinearLayout liner_find;
+    private LinearLayout liner_mes;
+
+    private ImageButton image_home;
+    private ImageButton image_find;
+    private ImageButton image_mes;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+        //获取界面控件
+        getViews();
+        //注册事件监听器
+        setListener();
+        //设置默认页面
+        setDefaultPage();
+//        setfriendlistener();
+    }
+    /**
+     * 获取控件
+     */
+
+    private void setListener() {
+        MyListener mylistener = new MyListener();
+        liner_home.setOnClickListener(mylistener);
+        liner_find.setOnClickListener(mylistener);
+        liner_mes.setOnClickListener(mylistener);
+    }
+    //she值事件监听器
+
+    private void ResetTabsImg() {
+        image_home.setImageResource(R.drawable.home1);
+        image_find.setImageResource(R.drawable.guangchang1);
+        image_mes.setImageResource(R.drawable.fujin1);
+
+    }
+    private void SetTabsSelectedImg(int i) {
+        ResetTabsImg();
+        switch (i) {
+            case 0:
+                image_home.setImageResource(R.drawable.home2);
+                break;
+            case 1:
+                image_find.setImageResource(R.drawable.guangchang2);
+                break;
+            case 2:
+                image_mes.setImageResource(R.drawable.fujin2);
+                break;
+        }
+    }
+    //
+    private void setDefaultPage(){
+        android.app.FragmentManager fm = getFragmentManager();
+        //获取fragmentTranSaction
+        android.app.FragmentTransaction transaction = fm.beginTransaction();
+        //默认页面
+        hf = new HomeFragment();
+        transaction.replace(R.id.container,hf);
+        ResetTabsImg();
+        SetTabsSelectedImg(0);
+        //执行更改
+        transaction.commit();
+    }
+
+    //获取控件
+    private void getViews(){
+        ll =(LinearLayout)findViewById(R.id.ll);
+        liner_home = (LinearLayout)findViewById(R.id.liner_home);
+        liner_find = (LinearLayout)findViewById(R.id.liner_find);
+        liner_mes = (LinearLayout)findViewById(R.id.liner_mes);
+
+        image_home = (ImageButton)findViewById(R.id.image_home);
+        image_find = (ImageButton)findViewById(R.id.image_find);
+        image_mes = (ImageButton)findViewById(R.id.image_mes);
+
+    }
 
 
-    private View.OnClickListener mListener =new View.OnClickListener() {
+
+//    private View.OnClickListener mListener =new View.OnClickListener() {
+    class MyListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
 //            android.app.FragmentManager fm = getFragmentManager();
 //            FragmentTransaction ft =fm.beginTransaction();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            switch (view.getId()){
-                case R.id.btn_sy:
-                  if(hf == null){
-                      hf = new HomeFragment();
-                  }
-                    ft.replace(R.id.container,hf);
+            switch (view.getId()) {
+                case R.id.liner_home:
+                    if (hf == null) {
+                        hf = new HomeFragment();
+                    }
+                    ft.replace(R.id.container, hf);
+//                    setDefaultPage();
+                    SetTabsSelectedImg(0);
                     break;
-                case R.id.btn_gc://广场
-                    if(sf ==null){
+                case R.id.liner_find://广场
+                    if (sf == null) {
                         sf = new SquareFragment();
 
                     }
-                    ft.replace(R.id.container,sf);
+                    ft.replace(R.id.container, sf);
+//                    setSquare();
+                    SetTabsSelectedImg(1);
                     break;
-                case R.id.btn_fj:
-                    if(nf == null){
+                case R.id.liner_mes:
+                    if (nf == null) {
                         nf = new NearbyFragment();
                     }
-                    ft.replace(R.id.container,nf);
+                    ft.replace(R.id.container, nf);
+//                    setNear();
+                    SetTabsSelectedImg(2);
                     break;
-                /*case R.id.btn_wd:
-                    if(mf == null){
-                        mf = new MineFragment();
-                    }
-                    ft.replace(R.id.container,mf);
-                    break;*/
-            }//switch
+            }
             ft.commit();
             ll.invalidate();
         }
     };
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mMenu = (SlidingMenu) findViewById(R.id.id_menu);
-        findView();
-        setOnClick();
-        switch(Utils.flag){//实现从Fragment跳转到Fragment
-            case 1:
-                setDefaultPage();
-                break;
-            case 2:
-                setSquare();
-                break;
-            case 3:
-                setNear();
-                break;
-            case 4:
-                setMine();
-        }
-
-    }
-
-    private void setMine() {
+    public void setChangeBH() {
         android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        if (mf == null) {
-            mf = new MineFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        if (bh == null) {
+            bh = new BHFragment();
         }
-
-        ft.replace(R.id.container,mf);
+        ft.replace(R.id.container, bh);
         ft.commit();
         ll.invalidate();
     }
 
-    private void setNear() {
+    public void setChangeDn() {
         android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        if (nf == null) {
-            nf = new NearbyFragment();
-        }
-
-        ft.replace(R.id.container,nf);
-        ft.commit();
-        ll.invalidate();
-    }
-
-    private void setSquare() {
-        android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
+        FragmentTransaction ft = fm.beginTransaction();
         if (sf == null) {
             sf = new SquareFragment();
         }
-
-        ft.replace(R.id.container,sf);
+        ft.replace(R.id.container, sf);
         ft.commit();
         ll.invalidate();
     }
-
-    private void setDefaultPage() {
-        android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft =fm.beginTransaction();
-        if (hf == null) {
-            hf = new HomeFragment();
-        }
-
-        ft.replace(R.id.container,hf);
-        ft.commit();
-        ll.invalidate();
-    }
-
-    private void setOnClick() {
-        btn.setOnClickListener(mListener);
-        btn1.setOnClickListener(mListener);
-        btn2.setOnClickListener(mListener);
-        btn3.setOnClickListener(mListener);
-
-    }
-
-    private void findView() {
-        /*btn = (Button)findViewById(R.id.btn_sy);
-        btn1 = (Button)findViewById(R.id.btn_gc);
-        btn2 = (Button)findViewById(R.id.btn_fj);
-        btn3 = (Button)findViewById(R.id.btn_wd);*/
-        ll = (LinearLayout)findViewById(R.id.ll);
-    }
-
-
 
     /*扫二维码功能*/
     @Override

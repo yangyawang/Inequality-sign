@@ -30,7 +30,7 @@
             android:gravity="center"
             android:textSize="25dp"
             android:background="@drawable/zzkbound"
-            android:text="取消排号成功！！！"
+            android:text="取消排 号成功！！！"
             android:textColor="@color/royalblue" />
 
     </LinearLayout>

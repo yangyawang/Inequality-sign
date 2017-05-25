@@ -89,7 +89,7 @@ public class DiningActivity extends Activity {
                     i.setClass(DiningActivity.this,MainActivity.class);
                     startActivity(i);
                     break;
-                case R.id.ct:
+                /*case R.id.ct:
                     //展示餐厅列表数据
                     displayDining();
                     lv.setAdapter(adapter);
@@ -98,7 +98,7 @@ public class DiningActivity extends Activity {
                     //展示营业厅列表数据
 
                     displayYyt();
-                    break;
+                    break;*/
             }
         }
     };
@@ -172,9 +172,9 @@ public class DiningActivity extends Activity {
     }
 
     private void findView() {
-        btn2=(Button)findViewById(R.id.yyt);
+//        btn2=(Button)findViewById(R.id.yyt);
         btn=(Button)findViewById(R.id.back1);
-        btn1 = (Button)findViewById(R.id.ct);
+//        btn1 = (Button)findViewById(R.id.ct);
         lv = (ListView)findViewById(R.id.Lv);
     }
 }

@@ -6,6 +6,7 @@ import android.app.Notification;
 import android.content.Intent;
 import android.os.Message;
 import android.provider.Settings;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private MineFragment mf;
     private NearbyFragment nf;
     private SquareFragment sf;
+    private BHFragment bh;
     private LinearLayout ll;
     private List<Dining> ls;
 
@@ -105,7 +107,28 @@ public class MainActivity extends AppCompatActivity {
             case 4:
                 setMine();
         }
+    }
 
+    public void setChangeBH() {
+        android.app.FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        if (bh == null) {
+            bh = new BHFragment();
+        }
+        ft.replace(R.id.container, bh);
+        ft.commit();
+        ll.invalidate();
+    }
+
+    public void setChangeDn() {
+        android.app.FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        if (sf == null) {
+            sf = new SquareFragment();
+        }
+        ft.replace(R.id.container, sf);
+        ft.commit();
+        ll.invalidate();
     }
 
     private void setMine() {

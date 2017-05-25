@@ -1,8 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+    android:orientation="vertical"
              tools:context="com.example.lenovo.inequalitysign.view.NearbyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#09c9f9"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="7dp"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="55dp"
+            android:paddingLeft="90dp"
+            android:gravity="center"
+            android:text="附近"
+            android:textSize="30sp"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#09c9f9"
+            android:text="切换"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:id="@+id/btn" />
+    </LinearLayout>
 
     <!-- TODO: Update blank fragment layout -->
     <com.baidu.mapapi.map.TextureMapView
@@ -11,4 +39,4 @@
         android:layout_height="wrap_content"
         android:clickable="true" />
 
-</FrameLayout>
+</LinearLayout>

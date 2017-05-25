@@ -42,14 +42,14 @@ public class MineFragment extends Fragment {
         public void onClick(View view) {
             switch (view.getId()){
 
-                case R.id.mypageB1:
+                /*case R.id.mypageB1:
                     //调到登陆界面 ,图片下面的字体改变成推出当前账号
 
                     Intent i = new Intent();
                     i.setClass(getActivity().getApplicationContext(), LoginActivity.class);
                     startActivity(i);
                     btn.setText("推出当前账号");
-                    break;
+                    break;*/
                 case R.id.mypageB2:
                     //如果 没登陆 调到登陆界面，登陆之后可以查看记录
                     if(Utils.id==""){
@@ -145,7 +145,7 @@ public class MineFragment extends Fragment {
     }
 
     private void findView() {
-        btn = (Button)view.findViewById(R.id.mypageB1);//登陆
+        //btn = (Button)view.findViewById(R.id.mypageB1);//登陆
         ll = (LinearLayout)view.findViewById(R.id.mypageB2);//排号记录
         llL = (LinearLayout)view.findViewById(R.id.mypageB3);//个人资料
         tv_name = (TextView)view.findViewById(R.id.tv_name);

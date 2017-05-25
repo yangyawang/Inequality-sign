@@ -6,7 +6,6 @@ import android.app.Notification;
 import android.content.Intent;
 import android.os.Message;
 import android.provider.Settings;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +32,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.logging.Handler;
 
+import android.os.Bundle;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btn;
@@ -43,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private MineFragment mf;
     private NearbyFragment nf;
     private SquareFragment sf;
-    private BHFragment bh;
     private LinearLayout ll;
     private List<Dining> ls;
+    private SlidingMenu mMenu;
 
 
     private View.OnClickListener mListener =new View.OnClickListener() {
@@ -75,12 +80,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     ft.replace(R.id.container,nf);
                     break;
-                case R.id.btn_wd:
+                /*case R.id.btn_wd:
                     if(mf == null){
                         mf = new MineFragment();
                     }
                     ft.replace(R.id.container,mf);
-                    break;
+                    break;*/
             }//switch
             ft.commit();
             ll.invalidate();
@@ -92,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mMenu = (SlidingMenu) findViewById(R.id.id_menu);
         findView();
         setOnClick();
         switch(Utils.flag){//实现从Fragment跳转到Fragment
@@ -107,28 +113,7 @@ public class MainActivity extends AppCompatActivity {
             case 4:
                 setMine();
         }
-    }
 
-    public void setChangeBH() {
-        android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        if (bh == null) {
-            bh = new BHFragment();
-        }
-        ft.replace(R.id.container, bh);
-        ft.commit();
-        ll.invalidate();
-    }
-
-    public void setChangeDn() {
-        android.app.FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        if (sf == null) {
-            sf = new SquareFragment();
-        }
-        ft.replace(R.id.container, sf);
-        ft.commit();
-        ll.invalidate();
     }
 
     private void setMine() {
@@ -188,10 +173,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void findView() {
-        btn = (Button)findViewById(R.id.btn_sy);
+        /*btn = (Button)findViewById(R.id.btn_sy);
         btn1 = (Button)findViewById(R.id.btn_gc);
         btn2 = (Button)findViewById(R.id.btn_fj);
-        btn3 = (Button)findViewById(R.id.btn_wd);
+        btn3 = (Button)findViewById(R.id.btn_wd);*/
         ll = (LinearLayout)findViewById(R.id.ll);
     }
 

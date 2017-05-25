@@ -18,33 +18,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_weight="1">
-        <Button
-            android:id="@+id/btn_sy"
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/sy"/>
-        <Button
-            android:id="@+id/btn_gc"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/btn_sy"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:layout_gravity="center"
+                android:background="@drawable/home1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="首页"
+                android:layout_weight="3"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/gc"/>
-        <Button
-            android:id="@+id/btn_fj"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/btn_gc"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:layout_gravity="center"
+                android:background="@drawable/guangchang1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:text="广场"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/fj"
-            />
-        <Button
-            android:id="@+id/btn_wd"
-            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/wd"/>
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/btn_fj"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:layout_gravity="center"
+                android:background="@drawable/dingwei1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="0dp"
+                android:text="附近"
+                android:textSize="15dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

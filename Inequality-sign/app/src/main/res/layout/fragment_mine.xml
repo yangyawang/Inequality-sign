@@ -1,128 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.lenovo.inequalitysign.ui.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.lenovo.inequalitysign.ui.MainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:id="@+id/id_menu">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/all"
-                android:text="我的"
-                android:gravity="center"
-                android:textSize="30dp"/>
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:background="@drawable/touxiangxiatupian"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+                <com.example.lenovo.inequalitysign.Utils.CircleImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/touxiang"
+                    app:border_width="2dp"
+                    app:border_color="#FFFFFF"
+                    android:id="@+id/imageButton"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_name"
+                    android:textSize="40dp"
+                    android:text="小明"
+                    android:textColor="@color/black"/>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray" />
 
         </LinearLayout>
 
-        <com.example.lenovo.inequalitysign.Utils.CircleImageView
-            android:layout_marginTop="20dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:src="@drawable/touxiang"
-            app:border_width="2dp"
-            app:border_color="#FFFFFF"
-            android:id="@+id/imageButton"/>
-        <RelativeLayout
-            android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="150dp"
-            android:layout_height="45dp">
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="46dp"
-                android:text="登    录"
-                android:gravity="center"
-                android:id="@+id/mypageB1"
-                android:background="@color/all"
-                android:textSize="20dp"/>
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:gravity="center"
-                android:id="@+id/tv_name"
-                android:visibility="gone"
-                android:background="@color/all"
-                android:textSize="20dp"/>
-        </RelativeLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/lightgray" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp">
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:id="@+id/mypageB2">
+
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="5"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/shoucangshi"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
                 android:layout_height="match_parent"
                 android:text="排号记录"
-                android:paddingTop="8dp"
+                android:paddingTop="5dp"
                 android:paddingLeft="20dp"
-                android:textSize="15dp"/>
+                android:textSize="25dp"
+                android:textColor="@color/black"/>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:src="@drawable/youjiantou"
-                android:layout_marginRight="2dp"/>
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="@color/dangrey" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:id="@+id/mypageB3">
+
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="5"
-                android:layout_height="match_parent"
-                android:text="个人资料"
-                android:paddingTop="8dp"
-                android:paddingLeft="20dp"
-                android:textSize="15dp"/>
-            <ImageView
-                android:layout_width="0dp"
                 android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/shezhi2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
                 android:layout_height="match_parent"
-                android:src="@drawable/youjiantou"
-                android:layout_marginRight="2dp"/>
+                android:text="设置"
+                android:paddingTop="5dp"
+                android:paddingLeft="20dp"
+                android:textSize="25dp"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/lightgray" />
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/mypageB4">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/tuichu"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingLeft="20dp"
+                android:text="退出"
+                android:textSize="25dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -140,4 +153,4 @@
 
 
 
-</LinearLayout>
+</com.example.lenovo.inequalitysign.ui.SlidingMenu>

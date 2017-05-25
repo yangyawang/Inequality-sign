@@ -10,12 +10,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/all">
+        android:background="@color/white">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="25dp"
-            android:textColor="#fff"
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="评论"/>
         <ImageButton

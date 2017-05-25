@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/linearLayout2"
-            android:background="@color/all"
+            android:background="@color/white"
             android:orientation="horizontal">
 
 

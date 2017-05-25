@@ -9,7 +9,7 @@
     tools:context="com.example.lenovo.inequalitysign.ui.MineProfileActivity">
 
         <RelativeLayout
-            android:background="#7cba84"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
             <ImageButton

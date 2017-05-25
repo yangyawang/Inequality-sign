@@ -6,16 +6,46 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context="com.example.lenovo.inequalitysign.ui.MainActivity">
+
+
 <LinearLayout
     android:id="@+id/refreshable_LL"
     android:longClickable="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/all"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:id="@+id/cehua"
+            android:background="@drawable/cehua"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="50dp"
+            android:textSize="25sp"
+            android:text="首页"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:paddingRight="50dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0dp"
@@ -34,7 +64,7 @@ tools:context="com.example.lenovo.inequalitysign.ui.MainActivity">
         <Button
             android:id="@+id/btn_search"
             android:layout_width="0dp"
-            android:layout_weight="10"
+            android:layout_weight="9"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:text="请输入商店，营业厅"
@@ -42,10 +72,16 @@ tools:context="com.example.lenovo.inequalitysign.ui.MainActivity">
             android:textColorHint="@color/font"
             android:textColor="@color/font"
             android:background="@drawable/shape_theme"/>
-        <LinearLayout
+        <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="30dp"
+            android:id="@+id/dingwei"
+            android:background="@drawable/dingwei2"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            />
+
     </LinearLayout>
 
     <FrameLayout
@@ -161,7 +197,20 @@ tools:context="com.example.lenovo.inequalitysign.ui.MainActivity">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/lv"></ListView>
+            android:id="@+id/lv1"></ListView>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv2"></ListView>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv3"></ListView>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv4"></ListView>
+
 
     </LinearLayout>
 

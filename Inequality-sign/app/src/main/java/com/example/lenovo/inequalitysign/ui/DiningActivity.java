@@ -18,6 +18,7 @@ import com.example.lenovo.inequalitysign.Utils.Utils;
 import com.example.lenovo.inequalitysign.adapter.DiningAdapter;
 import com.example.lenovo.inequalitysign.entity.Dining;
 import com.example.lenovo.inequalitysign.http.Httpss;
+import com.example.lenovo.inequalitysign.view.SquareFragment;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -167,8 +168,8 @@ public class DiningActivity extends Activity {
 
     private void setOnClick() {
         btn.setOnClickListener(mListener);
-        btn1.setOnClickListener(mListener);
-        btn2.setOnClickListener(mListener);
+       /* btn1.setOnClickListener(mListener);
+        btn2.setOnClickListener(mListener);*/
     }
 
     private void findView() {

@@ -30,6 +30,8 @@
                 android:id="@+id/loginB1"/>
 
         </RelativeLayout>
+        
+
 
         <View
             android:layout_width="match_parent"
@@ -133,7 +135,7 @@
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
             android:textSize="17dp"
-            android:textColor="@color/white"
+            android:textColor="@color/burlywood"
             android:id="@+id/loginB3"/>
 
         <LinearLayout
@@ -182,13 +184,14 @@
                 android:layout_gravity="left"
                 android:orientation="vertical"
                 android:layout_weight="0.5">
-                <ImageButton
+                <com.example.lenovo.inequalitysign.Utils.CircleImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:background="@drawable/weibo"
                     android:layout_gravity="center"
-                    android:layout_alignParentStart="true"
                     android:layout_marginTop="20dp"
+                    android:src="@drawable/weibo"
+                    app:border_width="2dp"
+                    app:border_color="#FFFFFF"
                     android:id="@+id/loginB4"/>
                 <TextView
                     android:layout_width="150dp"
@@ -212,14 +215,14 @@
                     android:layout_height="70dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/weibo"
+                    android:src="@drawable/qq"
                     app:border_width="2dp"
                     app:border_color="#FFFFFF"
                     android:id="@+id/loginB5"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
-                    android:text="微博登录"
+                    android:text="QQ登录"
                     android:gravity="center"
                     android:layout_marginBottom="50dp"
                     android:layout_gravity="center"

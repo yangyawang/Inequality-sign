@@ -9,6 +9,10 @@
     android:orientation="vertical"
 
     tools:context=".ui.MainActivity">
+    <!--android:clipToPadding="false"-->
+    <!--android:fitsSystemWindows="true"-->
+    1
+
 
     <FrameLayout
         android:layout_width="match_parent"

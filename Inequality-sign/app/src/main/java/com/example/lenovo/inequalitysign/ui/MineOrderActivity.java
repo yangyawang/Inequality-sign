@@ -51,11 +51,11 @@ public class MineOrderActivity extends AppCompatActivity {
 
     private void setContent() {
         Intent in = getIntent();
-        shop_id = in.getStringExtra("Id");
+        shop_id = "3";
         type = in.getStringExtra("Type");
         num = in.getStringExtra("Num");
         Log.e("++++++",shop_id+"1");
-        if(shop_id == "null"){
+        if(true){
             new Thread(new Runnable() {
                 @Override
                 public void run() {

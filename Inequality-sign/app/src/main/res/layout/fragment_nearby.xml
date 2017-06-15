@@ -1,9 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-             tools:context="com.example.lenovo.inequalitysign.view.NearbyFragment">
+    tools:context="com.example.lenovo.inequalitysign.view.NearbyFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,9 +13,9 @@
         <TextView
             android:layout_marginTop="7dp"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:layout_height="55dp"
-            android:paddingLeft="90dp"
+            android:paddingLeft="60dp"
             android:gravity="center"
             android:text="附近"
             android:textSize="30sp"
@@ -23,10 +23,10 @@
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="#09c9f9"
-            android:text="切换"
+            android:text="索引"
             android:textColor="#fff"
             android:textSize="17sp"
             android:id="@+id/btn" />
@@ -37,6 +37,16 @@
         android:id="@+id/bmapView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
         android:clickable="true" />
+    <ImageView
+        android:id="@+id/img_jia"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/round"
+        android:src="@drawable/login" />
 
-</LinearLayout>
+</RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.lenovo.inequalitysign.ui.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,40 +10,41 @@
     android:id="@+id/id_menu">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/touxiangxiatupian"
             android:orientation="horizontal"
-            android:gravity="bottom">
-                <com.example.lenovo.inequalitysign.Utils.CircleImageView
-                    android:layout_marginTop="20dp"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/touxiang"
-                    app:border_width="2dp"
-                    app:border_color="#FFFFFF"
-                    android:id="@+id/imageButton"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_name"
-                    android:textSize="40dp"
-                    android:text="小明"
-                    android:textColor="@color/black"/>
+            android:gravity="bottom"
+            android:id="@+id/mypageB1">
+            <com.example.lenovo.inequalitysign.Utils.CircleImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/touxiang"
+                app:border_width="2dp"
+                app:border_color="#FFFFFF"
+                android:id="@+id/imageButton"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_name"
+                android:textSize="40dp"
+                android:text="请登录"
+                android:textColor="@color/black"/>
 
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/lightgray" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightgray" />
 
         </LinearLayout>
 
@@ -53,99 +55,115 @@
 
         </LinearLayout>
 
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:id="@+id/mypageB2">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="30dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/shoucangshi"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="9"
-                android:layout_height="match_parent"
-                android:text="排号记录"
-                android:paddingTop="5dp"
-                android:paddingLeft="20dp"
-                android:textSize="25dp"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:id="@+id/mypageB3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="30dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/shezhi2"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="9"
-                android:layout_height="match_parent"
-                android:text="设置"
-                android:paddingTop="5dp"
-                android:paddingLeft="20dp"
-                android:textSize="25dp"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:id="@+id/mypageB4">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="30dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/tuichu"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="9"
-                android:layout_height="match_parent"
-                android:paddingTop="5dp"
-                android:paddingLeft="20dp"
-                android:text="退出"
-                android:textSize="25dp"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-//第二
-        <LinearLayout
+        <ListView
+            android:id="@+id/lv10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btn_exit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="退出登录"
-                android:visibility="gone"/>
-        </LinearLayout>
+
+        </ListView>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingTop="5dp"-->
+            <!--android:paddingBottom="5dp"-->
+            <!--android:id="@+id/mypageB2"-->
+            <!--android:clickable="false">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:background="@drawable/shoucangshi"-->
+                <!--android:clickable="false"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="9"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/paihaojilu"-->
+                <!--android:text="排号记录"-->
+                <!--android:paddingTop="5dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:textSize="25dp"-->
+                <!--android:textColor="@color/black"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingTop="5dp"-->
+            <!--android:paddingBottom="5dp"-->
+            <!--android:id="@+id/mypageB3">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:background="@drawable/shezhi2"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="9"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/shezhi"-->
+                <!--android:text="设置"-->
+                <!--android:paddingTop="5dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:textSize="25dp"-->
+                <!--android:textColor="@color/black"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingTop="5dp"-->
+            <!--android:paddingBottom="5dp"-->
+            <!--android:id="@+id/mypageB4">-->
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:background="@drawable/tuichu"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="9"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:id="@+id/tuichu"-->
+                <!--android:paddingTop="5dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:text="退出"-->
+                <!--android:textSize="25dp"-->
+                <!--android:textColor="@color/black"/>-->
+        <!--</LinearLayout>-->
+        <!--//第二-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<Button-->
+                <!--android:id="@+id/btn_exit"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="退出登录"-->
+                <!--android:visibility="gone"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="按钮"-->
+        <!--android:id="@+id/laoanniu"/>-->
 
     </LinearLayout>
 
@@ -153,4 +171,4 @@
 
 
 
-</com.example.lenovo.inequalitysign.ui.SlidingMenu>
+</LinearLayout>

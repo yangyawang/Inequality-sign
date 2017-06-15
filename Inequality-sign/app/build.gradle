@@ -46,5 +46,5 @@ dependencies {
     compile project(':libzxing')
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
     compile files('libs/android-async-http-1.4.6.jar')
-    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/baidumapapi_base_v4_3_1.jar')
 }

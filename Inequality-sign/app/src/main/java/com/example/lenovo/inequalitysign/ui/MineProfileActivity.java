@@ -59,12 +59,15 @@ public class MineProfileActivity extends AppCompatActivity {
     protected static final int CHOOSE_PICTURE = 0; //相册
     protected static final int TAKE_PICTURE = 1; //相机
     private static final int CROP_SMALL_PICTURE = 2; //截图
+    public static String userImgUrl;
+    public static String userImgName;
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             tv_sex.setText(sex);
             tv_name.setText(name);
+            userImgName = name;
             ImageLoader.getInstance().displayImage(url,iv);
         }
     };
@@ -97,7 +100,7 @@ public class MineProfileActivity extends AppCompatActivity {
             }
         }
     };
-    private File tempFile;  //调用照相机返图片临时文件
+    private static File tempFile;  //调用照相机返图片临时文件
 
 
     /**
@@ -181,7 +184,7 @@ public class MineProfileActivity extends AppCompatActivity {
                     if (uri == null) {
                         return;
                     }
-                    final String cropImagePath = getRealFilePathFromUri(getApplicationContext(), uri);
+                    String cropImagePath = getRealFilePathFromUri(getApplicationContext(), uri);
                     Bitmap bitMap = BitmapFactory.decodeFile(cropImagePath);
                     iv.setImageBitmap(bitMap);
 
@@ -191,7 +194,7 @@ public class MineProfileActivity extends AppCompatActivity {
                     //请求并修改用户头像
                     Httpss httpss = new Httpss();
                     httpss.postFile(MineProfileActivity.this, cropImagePath);
-
+                    userImgUrl = cropImagePath;
                 }
                 break;
         }

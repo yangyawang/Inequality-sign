@@ -3,12 +3,14 @@ package com.example.lenovo.inequalitysign.ui;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.lenovo.inequalitysign.R;
@@ -36,12 +38,19 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton image_home;
     private ImageButton image_find;
     private ImageButton image_mes;
+    public SlidingMenu mMenu;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        mMenu = (SlidingMenu)findViewById(R.id.sv);
+
         //获取界面控件
         getViews();
         //注册事件监听器
@@ -49,10 +58,19 @@ public class MainActivity extends AppCompatActivity {
         //设置默认页面
         setDefaultPage();
 //        setfriendlistener();
+
+
     }
     /**
      * 获取控件
      */
+
+    public void toggleMenu(View view)
+    {
+        mMenu.toggle();
+    }
+
+
 
     private void setListener() {
         MyListener mylistener = new MyListener();
@@ -149,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             ft.commit();
             ll.invalidate();
         }
+
     };
 
     public void setChangeBH() {

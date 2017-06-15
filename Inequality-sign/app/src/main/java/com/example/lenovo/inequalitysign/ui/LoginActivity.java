@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.lenovo.inequalitysign.R;
 
+import com.example.lenovo.inequalitysign.Utils.CircleImageView;
 import com.example.lenovo.inequalitysign.Utils.Utils;
 
 import com.example.lenovo.inequalitysign.Utils.QQUtil;
@@ -52,19 +53,21 @@ public class LoginActivity extends AppCompatActivity {
     private Button get_cord;
     private Button btn_login;
     private TextView now;
-    private ImageButton btn_wb;
-    private ImageButton btn_wx;
+    private CircleImageView btn_wb;
+    private CircleImageView btn_wx;
     private String iPhone;
     private String iCord;
     private int time = 60;
     private String openid;
     private boolean flag = true;
+    public static boolean isLogin = false;
     private Handler handler1 = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if(response_server.equals("loginfail")){
-
+            if(response_server
+                    .equals("loginfail")){
+                isLogin = true;
                 Toast.makeText(LoginActivity.this,"登录失败",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(LoginActivity.this,LoginActivity.class);
                 startActivity(i);
@@ -73,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 Utils.id = response_server;
                 Log.e("Utils.id",Utils.id);
                 Utils.flag = 4;
+                isLogin = true;
                 Intent i = new Intent(LoginActivity.this,MainActivity.class);
 
                 startActivity(i);
@@ -191,8 +195,8 @@ public class LoginActivity extends AppCompatActivity {
         get_cord = (Button) findViewById(R.id.loginB2);
         now = (TextView) findViewById(R.id.now);
         btn_login = (Button)findViewById(R.id.loginB3);//登陆按钮
-        btn_wb = (ImageButton)findViewById(R.id.loginB4);//微博登陆
-        btn_wx = (ImageButton)findViewById(R.id.loginB5);//微信登陆
+        btn_wb = (CircleImageView) findViewById(R.id.loginB4);//微博登陆
+        btn_wx = (CircleImageView)findViewById(R.id.loginB5);//微信登陆
 
 
     }

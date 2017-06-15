@@ -4,6 +4,8 @@ package com.example.lenovo.inequalitysign.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,19 +22,30 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.bumptech.glide.util.Util;
 import com.example.lenovo.inequalitysign.R;
+import com.example.lenovo.inequalitysign.Utils.CircleImageView;
 import com.example.lenovo.inequalitysign.Utils.Utils;
 import com.example.lenovo.inequalitysign.adapter.DiningAdapter;
+import com.example.lenovo.inequalitysign.adapter.Myadapter;
 import com.example.lenovo.inequalitysign.entity.Dining;
+import com.example.lenovo.inequalitysign.entity.Friend;
 import com.example.lenovo.inequalitysign.http.Httpss;
 import com.example.lenovo.inequalitysign.ui.DiningActivity;
 import com.example.lenovo.inequalitysign.ui.DiningInformationActivity;
+import com.example.lenovo.inequalitysign.ui.LoginActivity;
+import com.example.lenovo.inequalitysign.ui.MainActivity;
+import com.example.lenovo.inequalitysign.ui.MineOrderActivity;
+import com.example.lenovo.inequalitysign.ui.MineProfileActivity;
 import com.example.lenovo.inequalitysign.ui.SearchActivity;
+import com.example.lenovo.inequalitysign.ui.SlidingMenu;
+import com.taobao.accs.utl.UT;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import org.apache.http.NameValuePair;
@@ -53,14 +66,26 @@ public class HomeFragment extends Fragment {
     private ImageButton btn1;
     private ImageButton btn2;
     private Button btn3;
+    private Button btn_left;
 
-    private ListView lv;
+//    个人页面id获取
+    private CircleImageView yuantouxiang;
+    private TextView qingdenglu;
+    private LinearLayout paihaojilu;
+    private LinearLayout shezhi;
+    private LinearLayout tuichu;
+
+    private CircleImageView circleImageView;
+    private TextView tvUserName;
+    private ListView lv3;
     private int currentId = 0;
     private DiningAdapter adapter;
     private ViewPager mViewPaper;
     private List<ImageView> images;
     private List<View> dots;
+    private ListView lv;
     private int currentItem;
+    private SlidingMenu menu;
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
@@ -117,23 +142,23 @@ public class HomeFragment extends Fragment {
 
     /**
      * 设置ListView的高度
-     * @param lv
+     * @param lv1
      */
 
-    private void setListViewHeightBasedOnChildren(ListView lv) {
-        ListAdapter listAdapter = lv.getAdapter();
+    private void setListViewHeightBasedOnChildren(ListView lv1) {
+        ListAdapter listAdapter = lv1.getAdapter();
         if(listAdapter == null){
             return ;
         }
         int toalheight = 0;
         for(int i = 0 ,len = listAdapter.getCount(); i < len ; i++){
-            View view = listAdapter.getView(i,null,lv);
+            View view = listAdapter.getView(i,null,lv1);
             view.measure(0,0);
             toalheight += view.getMeasuredHeight();
         }
-        ViewGroup.LayoutParams params = lv.getLayoutParams();
+        ViewGroup.LayoutParams params = lv1.getLayoutParams();
         params.height = toalheight;
-        lv.setLayoutParams(params);
+        lv1.setLayoutParams(params);
 
     }
 
@@ -264,12 +289,84 @@ public class HomeFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        List<Friend> list = new ArrayList<Friend>();
+        list.add(new Friend(R.drawable.shoucangshi,"排号记录"));
+        list.add(new Friend(R.drawable.shezhi2,"设置"));
+        list.add(new Friend(R.drawable.tuichu,"退出"));
         view = inflater.inflate(R.layout.fragment_home, container, false);
         view1  = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.home_popupwindow,null);
         window  = new PopupWindow(view1,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT,true);
+        tvUserName = (TextView) view.findViewById(R.id.tv_name);
+        circleImageView = (CircleImageView) view.findViewById(R.id.imageButton);
+        Bitmap bitmap = BitmapFactory.decodeFile(MineProfileActivity.userImgUrl);
+        if (LoginActivity.isLogin){
+            tvUserName.setText(MineProfileActivity.userImgName);
+            circleImageView.setImageBitmap(bitmap);
+        }else{
+            tvUserName.setText("请登录");
+        }
+        circleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent();
+                if (LoginActivity.isLogin){
+                   i.setClass(getActivity(), MineProfileActivity.class);
+                }else{
+                    i.setClass(getActivity(),LoginActivity.class);
+                }
+                startActivity(i);
+            }
+        });
+        lv3 = (ListView) view.findViewById(R.id.lv10);
+        menu = (SlidingMenu) view.findViewById(R.id.sv);
+        btn_left = (Button) view.findViewById(R.id.btn_left);
+        btn_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (menu.isOpen == false)
+                    menu.openMenu();
+                else
+                    menu.closeMenu();
+            }
+        });
+        final Myadapter myadapter = new Myadapter(list,getActivity());
+        lv3.setAdapter(myadapter);
+        lv3.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    if(LoginActivity.isLogin) {
+                        Intent intent = new Intent(getActivity(), MineOrderActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Intent intent = new Intent(getActivity(),LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                if (i == 1){
+                    if(LoginActivity.isLogin){
+                        Intent intent = new Intent(getActivity(),MineProfileActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Intent intent = new Intent(getActivity(),LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                if (i == 2){
+                    if(LoginActivity.isLogin){
+                        LoginActivity.isLogin = false;
+                        tvUserName.setText("请登录");
+                        circleImageView.setImageResource(R.drawable.touxiang);
+                        lv3.setAdapter(myadapter);
+                    }
+                }
+            }
+        });
+
         return view;
     }
 
@@ -457,7 +554,7 @@ public class HomeFragment extends Fragment {
         btn1=(ImageButton)view.findViewById(R.id.btn_pd);
         btn2=(ImageButton)view.findViewById(R.id.btn_sys);
         btn3 = (Button)view.findViewById(R.id.btn_search);
-        lv = (ListView)view.findViewById(R.id.lv);
+        lv = (ListView)view.findViewById(R.id.lv1);
         tv_img = (TextView)view.findViewById(R.id.tv_img);
         pop1 = (TextView)view1.findViewById(R.id.pop1);
         pop2 = (TextView)view1.findViewById(R.id.pop2);
